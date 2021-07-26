@@ -19,7 +19,7 @@ from django.conf.urls import include
 from rango import views
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('rango/',include('rango.urls')),
-    path('admin/', admin.site.urls),
+    path('', views.index, name='index'),# if using http://127.0.0.1:8000/ to visit, views.index() will be called
+    path('rango/',include('rango.urls')),# using 127.0.0.1:8000/rango/ to visit, giving to rango
+    path('admin/', admin.site.urls),# using 127.0.0.1:8000/admin/ to visit, xxx
 ]
