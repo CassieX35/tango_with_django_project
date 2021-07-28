@@ -8,4 +8,4 @@ app_name = 'rango'
 urlpatterns = [
     path('',views.index, name='index'), #views.index() will be called
     path('about/',views.about, name='about'),
-] + static(settings.MEDIS_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
