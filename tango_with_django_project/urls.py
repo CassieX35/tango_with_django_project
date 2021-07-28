@@ -17,9 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rango import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),# if using http://127.0.0.1:8000/ to visit, views.index() will be called
     path('rango/',include('rango.urls')),# using 127.0.0.1:8000/rango/ to visit, giving to rango
     path('admin/', admin.site.urls),# using 127.0.0.1:8000/admin/ to visit, xxx
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
